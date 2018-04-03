@@ -24,11 +24,13 @@
                     <p>Here you can add your own cashe</p>
                 </div>
                 <form onsubmit="return userCache();" method="post">
-                    <input type="text" name="locationLatCord" id="lat" placeholder="Enter latitude coordinates ..." required>
-                    <input type="text" name="locationLonCord" id="lon" placeholder="Enter longitude coordinates ..." required>
+                    <input type="number" name="locationLatCord" id="lat" placeholder="0.000000" step="0.000001" min="-90" max="90" required>
+                    <input type="number" name="locationLonCord" id="lon" placeholder="0.000000" step="0.000001" min="-180" max="180" required>
                     <input type="text" name="nameofCashe" id="cashe" placeholder="Enter name of cashe ..." required>
+                    <input type="text" name="descriptionfCashe" id="cashe" placeholder="Enter description of cashe ..." max="450" required>
                     <input type="submit" value="Submit">
                 </form>
+                <p><a class="btnHelp" href="https://www.latlong.net" role="button" target="_blank">Lern how to input coordinates in google map ! </a></p>
             </div>
         </div>
         <script src="addMarker.js"></script>

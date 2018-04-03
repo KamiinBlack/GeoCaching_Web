@@ -16,12 +16,16 @@ html, body{
 }
 
 ul {
-    list-style-type:circle;
+    list-style-type:decimal;
 }
 
 li {
     color: coral;
     letter-spacing: 3px;
+}
+
+li:hover {
+    color: aqua;
 }
 
 .ul_NavBar {

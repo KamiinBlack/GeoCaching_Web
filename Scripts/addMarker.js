@@ -27,7 +27,6 @@ function initMap() {
         }  
     });    
 };
-
 function getRandomPostionForCashe(){
     return new Promise((resolve,reject) => {
         fetch('https://opendata.howardcountymd.gov/resource/96q9-qbh7.json')
@@ -39,7 +38,6 @@ function getRandomPostionForCashe(){
                 resolve(location);
             };});
     }); };
-
 //pobierz wszystkie dodane już skrytki użytkownika z pliku/bazy danych
 function getUserPostionForCashe(){
     return new Promise((resolve,reject) => {
@@ -54,7 +52,7 @@ function getUserPostionForCashe(){
 
         });});
 };
-
+//Dodaje marker na mapie wg przekazanej lokacji
 function addMarker(location,name) {
     marker = new google.maps.Marker({
         position: location,
@@ -71,3 +69,5 @@ function userCache(){
     newMarker= new google.maps.LatLng(locationLatCord, locationLonCord);
     addMarker(newMarker,nameofCashe);
 };
+
+

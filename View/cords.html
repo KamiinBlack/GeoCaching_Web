@@ -26,7 +26,17 @@
                     </ul>
                 </div>
             </div>
+            <div class="textMain">
+                <div class="Map">
+                    <p>Here you can delate your own cashe</p>
+                </div>
+                <form onsubmit="return deleteUserCache();" method="post" action ="/Delete">
+                    <input type="number" name="indexofCashe" id="idcashe" placeholder="Index of cache to delete ..." required>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
         </div>
+        <script src="deleteCords.js"></script>
         <script src="putUserCordsOnWeb.js"></script>
     </body>
 </html>
