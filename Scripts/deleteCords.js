@@ -8,10 +8,8 @@ function deleteUserCache(){
             li=lis[i];
             li.parentNode.removeChild(li);
             console.log("Cord delete");
-        };
-    
-
-};
+        };    
+    };
 };
 
 
