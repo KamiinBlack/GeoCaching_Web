@@ -25,9 +25,7 @@ function initMap() {
             newMarker= new google.maps.LatLng(ab, bb);
             addMarker(newMarker,nameofCashe);
         }  
-    }); 
-   
-    
+    });    
 };
 
 function getRandomPostionForCashe(){
@@ -72,8 +70,4 @@ function userCache(){
         newMarker= new google.maps.LatLng(locationLatCord, locationLonCord);
         addMarker(newMarker,nameofCashe);
 };
-
-//usuwanie identczna funcja jak dodaj ma byc usuń
-//i jescze zanzacz kotra zrobiles - z osobnym plikiem zrbione - tak jak lista kotre sa
-//jak sie uda dodoaac jeszcze po stronie app usuwanie wyniku - czyli czyta usuwa i zapisuje jako kopie oktra pozniej nadpisuje
     

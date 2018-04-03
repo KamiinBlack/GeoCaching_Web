@@ -1,1 +1,0 @@
-[{"LatCord":"52.237049","LonCord":"21.017532","nameCord":"Poland"},{"LatCord":"52.237049","LonCord":"21.017532","nameCord":"Poland"}]

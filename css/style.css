@@ -1,15 +1,27 @@
-body{
+*{
+   box-sizing: border-box; 
+}
+
+html, body{
     background-color: black;
     color : aliceblue; 
     background-image: url("https://upload.wikimedia.org/wikipedia/commons/d/d1/Mount_Everest_as_seen_from_Drukair2_PLW_edit.jpg");
     background-repeat: no-repeat;
-    font-family: 'Open Sans Condensed', sans-serif;
-    
-    
+    min-height: 100%;
+    font-family: 'Open Sans Condensed', sans-serif;   
 }
 #mainDiv {
         margin:100px;
         background: rgba(17, 64, 78, 0.61)
+}
+
+ul {
+    list-style-type:circle;
+}
+
+li {
+    color: coral;
+    letter-spacing: 3px;
 }
 
 .ul_NavBar {

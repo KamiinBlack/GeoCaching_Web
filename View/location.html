@@ -17,18 +17,20 @@
             </ul>
           </div>
         </nav>
-        <div class="Map">
-          <h1>Word Map with Cashes</h1>
-            <div id="map"></div>
-          <p>Here you can add your own cashe</p>
+        <div class="textMain">
+            <div class="Map">
+              <h1>Word Map with Cashes</h1>
+                <div id="map"></div>
+              <p>Here you can add your own cashe</p>
+            </div>
+              <form onsubmit="return userCache();" method="post">
+                <input type="text" name="locationLatCord" id="lat" placeholder="Enter latitude coordinates ..." required>
+                <input type="text" name="locationLonCord" id="lon" placeholder="Enter longitude coordinates ..." required>
+                <input type="text" name="nameofCashe" id="cashe" placeholder="Enter name of cashe ..." required>
+                <input type="submit" value="Submit">
+              </form>
+          </div>
         </div>
-          <form onsubmit="return userCache();" method="post">
-            <input type="text" name="locationLatCord" id="lat" placeholder="Enter latitude coordinates ..." required>
-            <input type="text" name="locationLonCord" id="lon" placeholder="Enter longitude coordinates ..." required>
-            <input type="text" name="nameofCashe" id="cashe" placeholder="Enter name of cashe ..." required>
-            <input type="submit">
-          </form>
-      </div>
     <script src="addMarker.js"></script>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAggPgBPkhGYVnZWSI5IYdt9fPCA2lQgCM&callback=initMap">
