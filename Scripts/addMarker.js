@@ -1,12 +1,12 @@
 let map;
 
 function initMap() {
-        const centerOfMapPos = {lat: 39.299236, lng: -76.609383};
-        map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 11,
-          center: centerOfMapPos
+    const centerOfMapPos = {lat: 39.299236, lng: -76.609383};
+    map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 11,
+        center: centerOfMapPos
     });
-    
+
     getRandomPostionForCashe().then((data) => {
         for(let i = 0;i<data.length;i++){
             let ab = data[i].location.latitude;
@@ -16,7 +16,7 @@ function initMap() {
             addMarker(newMarker,nameofCashe);
         }  
     }); 
-    
+
     getUserPostionForCashe().then((data) => {
         for(let i = 0;i<data.length;i++){
             let ab = data[i].LatCord
@@ -30,44 +30,44 @@ function initMap() {
 
 function getRandomPostionForCashe(){
     return new Promise((resolve,reject) => {
-    fetch('https://opendata.howardcountymd.gov/resource/96q9-qbh7.json')
-        .then(res => res.json())
-        .then(data => {
-        let location = [];
-        for(let i = 0;i<data.length;i++){
-        location.push(data[i]);
-        resolve(location);
-        };});
-}); };
+        fetch('https://opendata.howardcountymd.gov/resource/96q9-qbh7.json')
+            .then(res => res.json())
+            .then(data => {
+            let location = [];
+            for(let i = 0;i<data.length;i++){
+                location.push(data[i]);
+                resolve(location);
+            };});
+    }); };
 
+//pobierz wszystkie dodane już skrytki użytkownika z pliku/bazy danych
 function getUserPostionForCashe(){
     return new Promise((resolve,reject) => {
-    fetch('/userCords.json')
-        .then(res => res.json())
-        .then(data => {
-        let location = [];
-        for(let i = 0;i<data.length;i++){
-        location.push(data[i]);
-        resolve(location);
-        };
-        
+        fetch('/userCords.json')
+            .then(res => res.json())
+            .then(data => {
+            let location = [];
+            for(let i = 0;i<data.length;i++){
+                location.push(data[i]);
+                resolve(location);
+            };
+
         });});
 };
 
 function addMarker(location,name) {
-        marker = new google.maps.Marker({
-            position: location,
-            map: map,
-            title:name
-        });
+    marker = new google.maps.Marker({
+        position: location,
+        map: map,
+        title:name
+    });
 };
-
+//Dodaj nową skrytkę bezpośrednio na mapie, reaguje na onsubmit="return userCache();"
 function userCache(){
-        var locationLatCord = document.getElementById("lat").value;
-        var locationLonCord = document.getElementById("lon").value;
-        var nameofCashe = document.getElementById("cashe").value;;
-        
-        newMarker= new google.maps.LatLng(locationLatCord, locationLonCord);
-        addMarker(newMarker,nameofCashe);
+    var locationLatCord = document.getElementById("lat").value;
+    var locationLonCord = document.getElementById("lon").value;
+    var nameofCashe = document.getElementById("cashe").value;;
+
+    newMarker= new google.maps.LatLng(locationLatCord, locationLonCord);
+    addMarker(newMarker,nameofCashe);
 };
-    
